@@ -20,5 +20,6 @@ public class logicScript : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Exiting Application");
+        //quit button + logging everytime its pressed
     }
 }
