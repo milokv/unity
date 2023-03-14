@@ -364,8 +364,9 @@ GameObject:
   - component: {fileID: 307145045}
   - component: {fileID: 307145044}
   - component: {fileID: 307145043}
+  - component: {fileID: 307145046}
   m_Layer: 5
-  m_Name: Menu Button
+  m_Name: Auto Clicker Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,8 +390,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -367.03796, y: 204}
-  m_SizeDelta: {x: 58.8241, y: 30}
+  m_AnchoredPosition: {x: 320, y: -205}
+  m_SizeDelta: {x: 151, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307145043
 MonoBehaviour:
@@ -486,6 +487,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307145041}
   m_CullTransparentMesh: 1
+--- !u!114 &307145046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307145041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1614f1c8834be234d8164fc346f90c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoClickers: 0
 --- !u!1 &515145904
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SHOP
+  m_Text: AUTO-CLICKER
 --- !u!222 &762835788
 CanvasRenderer:
   m_ObjectHideFlags: 0
