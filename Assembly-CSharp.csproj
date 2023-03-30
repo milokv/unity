@@ -60,8 +60,8 @@
     <Compile Include="Assets\buyAutoClicker.cs" />
     <Compile Include="Assets\logicScript.cs" />
     <Compile Include="Assets\moneyCounter.cs" />
-    <Compile Include="Assets\clickScript.cs" />
     <Compile Include="Assets\menuButton.cs" />
+    <Compile Include="Assets\clickScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
