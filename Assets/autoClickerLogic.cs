@@ -21,6 +21,6 @@ public class autoClickerLogic : MonoBehaviour
     {
         logic.currentMoney = logic.currentMoney + 0.1f * (Time.deltaTime * autoClick.autoClickers);
         logic.moneyText.text = logic.currentMoney.ToString("#0.0#");
-
+        // adding 0.1 money per autoclicker bought per second, and then pushing it to the current money string.
     }
 }

@@ -8,13 +8,22 @@ public class buyAutoClicker : MonoBehaviour
     public int autoClickers;
     public int clickUpgrades;
     private logicScript logic;
+
     // text variable(?) where the text gameobject is dragged into so the text gets pushed there
     public Text clickerCost;
     public Text clickUpgradeCost;
 
+    // List of prices for click upgrade
+    List<int> clickUpgradeChart = new List<int>() {
+   200,
+   400,
+   800,
+};
+
     // Start is called before the first frame update
     void Start()
     {
+        // importing the logic game object and script to this script
        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript>();
     }
 
@@ -26,15 +35,19 @@ public class buyAutoClicker : MonoBehaviour
 
     public void buyClickUpgrade()
     {
-        if (logic.currentMoney >= (15 * Mathf.Pow(1.1f, clickUpgrades)))
+        if (logic.currentMoney >= (clickUpgradeChart[clickUpgrades]))
         {
-            logic.currentMoney = logic.currentMoney - (15 * Mathf.Pow(1.1f, clickUpgrades));
+            logic.currentMoney = logic.currentMoney - (clickUpgradeChart[clickUpgrades]);
             clickUpgrades = clickUpgrades + 1;
-            clickUpgradeCost.text = ("Cost: " + (15 * Mathf.Pow(1.1f, clickUpgrades)).ToString("#0.0#"));
-            logic.clickValue =  (clickUpgrades + 1);
+            // taking money and adding another click upgrade
+            clickUpgradeCost.text = ("Cost: " + (clickUpgradeChart[clickUpgrades]).ToString("#0.0#"));
+            // pushing the new cost for the upgrade to the upgrade price text, according to the chart
+            logic.clickValue = (clickUpgrades + 1);
+            // updating the money gained per click.
             Debug.Log("Bought Click Upgrade");
         }
         else Debug.Log("Tried to buy Click Upgrade, Could not afford.");
+        // logging that buy failed bc low money
     }
 
     public void buyClickerButton()

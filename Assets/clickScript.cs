@@ -10,6 +10,7 @@ public class clickScript : MonoBehaviour
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript>();
+        // once again, importing the logic object and script to this 
     }
 
     // Update is called once per frame
@@ -20,5 +21,6 @@ public class clickScript : MonoBehaviour
     private void OnMouseDown()
     {
         logic.addScore();
+        // making the monster clickable and running the addScore function everytime its clicked
     }
 }
