@@ -8,10 +8,12 @@ public class buyAutoClicker : MonoBehaviour
     public int autoClickers;
     public int clickUpgrades;
     private logicScript logic;
+    public int autoClicker2;
 
     // text variable(?) where the text gameobject is dragged into so the text gets pushed there
     public Text clickerCost;
     public Text clickUpgradeCost;
+    public Text clicker2Cost;
 
     // List of prices for click upgrade
     List<int> clickUpgradeChart = new List<int>() {
@@ -53,18 +55,34 @@ public class buyAutoClicker : MonoBehaviour
     public void buyClickerButton()
     {
         // check if player has the same or more amount of money that autoclicker costs
-        if (logic.currentMoney >= (15 * Mathf.Pow(1.1f, autoClickers)))
+        if (logic.currentMoney >= (15 * Mathf.Pow(1.13f, autoClickers)))
         {
             // remove the price of the autoclicker (15 times 1.1 to the power of the number of autoclickers) from balance
-            logic.currentMoney = logic.currentMoney - (15 * Mathf.Pow(1.1f, autoClickers));
+            logic.currentMoney = logic.currentMoney - (15 * Mathf.Pow(1.13f, autoClickers));
             // Change internal value of autoclickers bought by +1
             autoClickers = autoClickers + 1;
             // Push the new cost to pricetag in game
-            clickerCost.text = ("Cost: " + (15 * Mathf.Pow(1.1f, autoClickers)).ToString("#0.0#"));
+            clickerCost.text = ("Cost: " + (15 * Mathf.Pow(1.13f, autoClickers)).ToString("#0.0#"));
             Debug.Log("Bought Autoclicker");
         }
         else Debug.Log("Tried to buy autoclicker, not enough money.");
             
+    }
+
+    public void buyAuto2()
+    {
+        // check if player affords it
+        if (logic.currentMoney >= (80 * Mathf.Pow(1.1f, autoClicker2)))
+        {
+            // subtract price from player balance
+            logic.currentMoney = logic.currentMoney - (80 * Mathf.Pow(1.1f, autoClicker2));
+            // add one autoclicker 2 to the current count
+            autoClicker2 = autoClicker2 + 1;
+            // show the new price in shop
+            clicker2Cost.text = ("Cost: " + (80 * Mathf.Pow(1.1f, autoClicker2)).ToString("#0.0#"));
+            // add entry to log
+            Debug.Log("Bought Autoclicker2");
+        }
     }
 
 
